@@ -21,8 +21,7 @@ const SideDrawer = ({ show, click }) => {
                     <Link to="/cart">
                         <i className="fas fa-shopping-cart"></i>
                         <span>Cart
-                            {/* <span className="sidedrawer__cartbadge">{getCartCount()}</span> */}
-                            <span className="sidedrawer__cartbadge">0</span>
+                            <span className="sidedrawer__cartbadge">{getCartCount()}</span>
                         </span>
                     </Link>
                 </li>
