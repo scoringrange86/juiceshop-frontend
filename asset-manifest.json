@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/juiceshop-frontend/static/css/main.07ef9fe4.chunk.css",
-    "main.js": "/juiceshop-frontend/static/js/main.d54a8b9f.chunk.js",
-    "main.js.map": "/juiceshop-frontend/static/js/main.d54a8b9f.chunk.js.map",
+    "main.js": "/juiceshop-frontend/static/js/main.589fff18.chunk.js",
+    "main.js.map": "/juiceshop-frontend/static/js/main.589fff18.chunk.js.map",
     "runtime-main.js": "/juiceshop-frontend/static/js/runtime-main.341ee18f.js",
     "runtime-main.js.map": "/juiceshop-frontend/static/js/runtime-main.341ee18f.js.map",
     "static/js/2.12811209.chunk.js": "/juiceshop-frontend/static/js/2.12811209.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.341ee18f.js",
     "static/js/2.12811209.chunk.js",
     "static/css/main.07ef9fe4.chunk.css",
-    "static/js/main.d54a8b9f.chunk.js"
+    "static/js/main.589fff18.chunk.js"
   ]
 }
