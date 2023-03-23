@@ -1,6 +1,9 @@
 import * as actionTypes from '../constants/productConstants'
 
-let staticProduct = {
+
+// static product for isolated front end functionality
+
+export const staticProduct = {
     name: "Amazon Alexa #Static",
     description: "It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.",
     price: 50,
@@ -8,6 +11,9 @@ let staticProduct = {
     id: 1,
     imageUrl: "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
 }
+
+
+// static products for isolated front end functionality
 
 let staticProducts = [
     {
@@ -60,7 +66,11 @@ let staticProducts = [
     }
 ]
 
-const getProductsReducer = (state = { products: staticProducts }, action) => {
+const getProductsReducer = (state = { 
+    products: 
+    []
+    // staticProducts
+ }, action) => {
 
     switch (action.type) {
         case actionTypes.GET_PRODUCTS_REQUEST:
@@ -85,11 +95,16 @@ const getProductsReducer = (state = { products: staticProducts }, action) => {
     }
 }
 
-export const getProductDetailsReducer = (state = { product: staticProduct }, action) => {
+export const getProductDetailsReducer = (state = { 
+    product: 
+    // {}
+    staticProduct 
+}, action) => {
     switch (action.type) {
         case actionTypes.GET_PRODUCT_DETAILS_REQUEST:
             return {
-                loading: true
+                loading: true,
+                product: {}
             }
         case actionTypes.GET_PRODUCT_DETAILS_SUCCESS:
             return {
@@ -100,7 +115,16 @@ export const getProductDetailsReducer = (state = { product: staticProduct }, act
             return {
                 loading: false,
                 // error: action.payload
-                product: staticProduct
+                product: 
+                // staticProduct
+                {
+                    name: "Amazon Alexa #Failed",
+                    description: "It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.",
+                    price: 50,
+                    countInStock: 25,
+                    id: 1,
+                    imageUrl: "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
+                }
             }
         case actionTypes.GET_PRODUCT_DETAILS_RESET:
             return {

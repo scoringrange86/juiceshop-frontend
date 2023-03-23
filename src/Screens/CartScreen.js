@@ -1,5 +1,4 @@
 import './CartScreen.css'
-import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -27,7 +26,7 @@ const CartScreen = () => {
     {
         return cartItems.reduce(
             (qty, item) => 
-            ( Number(item.qty) + qty, 0)
+             Number(item.qty) + qty, 0
            
          )
     }
@@ -35,7 +34,7 @@ const CartScreen = () => {
     const getCartSubTotal = () => {
         return cartItems.reduce(
             (price, item) => 
-            ( (item.price * item.qty) + price, 0)
+             (item.price * item.qty) + price, 0
         )
     }
     return (
@@ -49,8 +48,11 @@ const CartScreen = () => {
                     </div>
                 ) : (cartItems.map(item =>
                     (
-                        <CartItem key={item.product}
-                        item={item} qtyChangeHandler={qtyChangeHandler} removeHandler={removeHandler} />
+                        <CartItem
+                        key={item.product}
+                        item={item} 
+                        qtyChangeHandler={qtyChangeHandler}
+                        removeHandler={removeHandler} />
                     ))
                 )
             }               

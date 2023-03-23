@@ -16,7 +16,9 @@ import SideDrawer from './Components/SideDrawer'
 function  App() {
   const [sideToggle, setSideToggle] = useState(false);
     return (
-     <Router basename={process.env.PUBLIC_URL}>
+     <Router 
+     basename={process.env.PUBLIC_URL}
+     >
       <Navbar click={() => setSideToggle(true)}/>
       <SideDrawer show={sideToggle} click={()=> setSideToggle(false)}/>
       <Backdrop show={sideToggle} click={()=> setSideToggle(false)}/>

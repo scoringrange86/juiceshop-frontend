@@ -10,7 +10,9 @@ export const getProducts = () => async (dispatch) => {
 
         dispatch ({
             type: actionTypes.GET_PRODUCTS_SUCCESS,
-            payload: data
+            payload: 
+            // console.log("products recieved",data) &&
+            data
         })
     }
     catch(error){
@@ -20,6 +22,7 @@ export const getProducts = () => async (dispatch) => {
             error.response && error.response.data.message 
             ? error.response.data.message
             : error.message
+            
         })
     }
 }

@@ -20,13 +20,22 @@ const ProductScreen = ({ match, history }) => {
     console.log('product: ', product);
     console.log('product details: ', productDetails);
 
-    useEffect( () => {
-        if (product && (match.params.id !== product._id)) {
-            dispatch(getProductDetails(match.params.id))
-        }
-    }, [dispatch, match])
+    // match params is the id in the url 
+    // useEffect( () => {
+    //     console.log('match params ', match.params)
+    //     console.log('history', history)
+    //     if (product && (match.params.id !== product._id)) {
+    //         dispatch(getProductDetails(match.params.id))
+    //         // dispatch(getProductDetails(product._id))
+    //     }
+    // }, [
+    //     dispatch,
+    //      product,
+    //       match])
 
     const addToCartHandler = () => {
+        console.log('product id', product._id)
+        console.log('qty ', qty)
         dispatch(addToCart(product._id, qty));
         history.push('/cart');
     }
@@ -37,9 +46,6 @@ const ProductScreen = ({ match, history }) => {
                 <>
                     <div className="productscreen__left">
                         <div className="left__image">
-                            {/* Learn alt */}
-                            {/* <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=
-    rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="product name" /> */}
     <img src={product.imageUrl} alt="product name" />
                         </div>
                         <div className="left__info">
@@ -51,15 +57,11 @@ const ProductScreen = ({ match, history }) => {
                     <div className="productscreen__right">
                         <div className="right__info">
                             <p>Price: <span>${product.price}</span></p>
-                            <p>Status: <span>{product.conuntInStock > 0 ? "In Stock" : "Out of Stock"}</span></p>
+                            <p>Status: <span>{product.countInStock > 0 ? "In Stock" : "Out of Stock"}</span></p>
                             <p>
                                 Qty
                                 <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    {[...Array(product.conuntInStock).keys()].map((x) => (
+                                    {[...Array(product.countInStock).keys()].map((x) => (
                                         <option key={x+1} value={x+1} >
                                              {x+1} 
                                              </option>

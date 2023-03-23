@@ -14,6 +14,7 @@ const HomeScreen = () => {
 
     const getProducts = useSelector(state => state.getProducts)
     const {products, loading, error} = getProducts
+    console.log("Home Screen products ", products)
 
     useEffect( () => {
         dispatch(listProducts())

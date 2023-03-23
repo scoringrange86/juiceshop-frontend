@@ -1,19 +1,25 @@
 import * as actionTypes from '../constants/cartConstants'
 import axios from 'axios'
+// static product for cart functionality
+import { staticProduct } from '../reducers/productReducers'
 
 // Learn redux thunk / dispatch
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-    const {data} = await axios.get(`/api/products/${id}` )
+    // const {data} = await axios.get(`/api/products/${id}` )
+
+
+    // static product for isolated front end, cart functionality
+    const data = staticProduct;
 
     dispatch ({
         type: actionTypes.ADD_TO_CART,
-        paylad: {
+        payload: {
             product: data._id,
             name: data.name,
             imageUrl: data.imageUrl,
             price: data.price,
             countInStock: data.countInStock,
-            qty,
+            qty
         }
     })
 

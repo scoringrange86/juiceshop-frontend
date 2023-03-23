@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+#"homepage": "https://scoringrange86.github.io/juiceshop-frontend/"
