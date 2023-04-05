@@ -13,6 +13,8 @@ export const staticProduct = {
 }
 
 
+// https://unsplash.com/photos/kkrXVKK-jhg
+// https://imagekkrXVKK-jhg
 // static products for isolated front end functionality
 
 let staticProducts = [
@@ -22,7 +24,9 @@ let staticProducts = [
         price: 50,
         countInStock: 25,
         id: 1,
-        imageUrl: "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
+        imageUrl: 
+        "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg"
+        // "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
     },
     {
         name: "Audio Technica Headphones #Static",
@@ -38,7 +42,8 @@ let staticProducts = [
         price: 1300,
         countInStock: 5,
         id: 3,
-        imageUrl: "https://images.unsplash.com/photo-1519183071298-a2962feb14f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        imageUrl: 
+        "https://images.unsplash.com/photo-1519183071298-a2962feb14f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     },
     {
         name: "Iphone 12 #Static",
