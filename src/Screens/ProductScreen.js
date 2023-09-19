@@ -10,7 +10,7 @@ import { addToCart } from '../redux/actions/cartActions'
 
 const ProductScreen = ({ match, history }) => {
 
-    console.log('test');
+    console.log("match: ", match.params);
     const [qty, setQty ] = useState(1);
     const dispatch = useDispatch();
 
@@ -21,17 +21,18 @@ const ProductScreen = ({ match, history }) => {
     console.log('product details: ', productDetails);
 
     // match params is the id in the url 
-    // useEffect( () => {
-    //     console.log('match params ', match.params)
-    //     console.log('history', history)
-    //     if (product && (match.params.id !== product._id)) {
-    //         dispatch(getProductDetails(match.params.id))
-    //         // dispatch(getProductDetails(product._id))
-    //     }
-    // }, [
-    //     dispatch,
-    //      product,
-    //       match])
+    useEffect( () => {
+        console.log('match params ', match.params)
+        // console.log('history', history)
+        if (product && (match.params.id !== product._id)) {
+            console.log('dispatching updated product')
+            dispatch(getProductDetails(match.params.id))
+            // dispatch(getProductDetails(product._id))
+        }
+    }, [
+        dispatch,
+         product,
+          match])
 
     const addToCartHandler = () => {
         console.log('product id', product._id)
