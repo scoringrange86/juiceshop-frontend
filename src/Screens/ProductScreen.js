@@ -17,17 +17,11 @@ const ProductScreen = ({ match, history }) => {
     const productDetails = useSelector(state => state.getProductDetails);
     const {loading, error, product } = productDetails;
 
-    console.log('product: ', product);
-    console.log('product details: ', productDetails);
-
     // match params is the id in the url 
     useEffect( () => {
-        console.log('match params ', match.params)
-        // console.log('history', history)
         if (product && (match.params.id !== product._id)) {
             console.log('dispatching updated product')
             dispatch(getProductDetails(match.params.id))
-            // dispatch(getProductDetails(product._id))
         }
     }, [
         dispatch,
@@ -35,8 +29,6 @@ const ProductScreen = ({ match, history }) => {
           match])
 
     const addToCartHandler = () => {
-        console.log('product id', product._id)
-        console.log('qty ', qty)
         dispatch(addToCart(product._id, qty));
         history.push('/cart');
     }

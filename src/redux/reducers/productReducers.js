@@ -4,15 +4,6 @@ import * as actionTypes from '../constants/productConstants'
 // static product for isolated front end functionality
 
 export const staticProduct = 
-// {
-//     name: "Amazon Alexa #Static",
-//     description: "It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.",
-//     price: 50,
-//     countInStock: 25,
-//     id: 1,
-//     imageUrl: "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
-// }
-
 {
     name: "Audio Technica Headphones #Static",
     description: "It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.",
@@ -103,7 +94,6 @@ const getProductsReducer = (state = {
             return {
                 loading: false,
                 error: action.payload,
-                // products: staticProducts
             }
         default:
             return state
@@ -113,7 +103,6 @@ const getProductsReducer = (state = {
 export const getProductDetailsReducer = (state = { 
     product: 
     {}
-    // staticProduct 
 }, action) => {
     switch (action.type) {
         case actionTypes.GET_PRODUCT_DETAILS_REQUEST:
@@ -130,16 +119,6 @@ export const getProductDetailsReducer = (state = {
             return {
                 loading: false,
                 error: action.payload
-                // product: 
-                // // staticProduct
-                // {
-                //     name: "Amazon Alexa #Failed",
-                //     description: "It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.",
-                //     price: 50,
-                //     countInStock: 25,
-                //     id: 1,
-                //     imageUrl: "https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
-                // }
             }
         case actionTypes.GET_PRODUCT_DETAILS_RESET:
             return {

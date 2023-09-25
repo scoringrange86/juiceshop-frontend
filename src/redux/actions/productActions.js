@@ -66,6 +66,8 @@ export const getProducts = () => async (dispatch) => {
             payload: 
             // console.log("products recieved",data) &&
             //data
+
+            // inserting static products as payload for frontend functionality
             staticProducts
         })
     }
@@ -88,9 +90,11 @@ export const getProductDetails = (id) => async (dispatch) => {
 
         // const {data} = await axios.get(`/api/products/${id}`)
 
+        // find id within array of static products
         const data =  staticProducts.find(d => d._id === id )
 
-        console.log('id: ', id, 'data: ', data);
+        // test data
+        // console.log('id: ', id, 'data: ', data);
            
 
         dispatch ({
